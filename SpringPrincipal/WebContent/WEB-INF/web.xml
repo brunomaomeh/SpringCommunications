@@ -5,7 +5,6 @@
 	id="WebApp_ID" version="2.4">
 	<display-name>SpringPrincipal</display-name>
 
-
 	<!-- ******************************************************* -->
 	<!-- Configuração do Spring -->
 	<!-- ******************************************************* -->
@@ -14,7 +13,7 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 			/WEB-INF/config/spring/applicationContext.xml
-			/WEB-INF/config/spring/applicationContext-persistence.xml
+<!--			/WEB-INF/config/spring/applicationContext-persistence.xml-->
 		</param-value>
 	</context-param>
 
@@ -22,6 +21,11 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
+
+	<!-- ******************************************************* -->
+	<!-- Configuração do Vraptor -->
+	<!-- ******************************************************* -->
+	
 	<filter>
 		<filter-name>vraptor</filter-name>
 		<filter-class>br.com.caelum.vraptor.VRaptor</filter-class>
@@ -32,4 +36,5 @@
 		<dispatcher>FORWARD</dispatcher>
 		<dispatcher>REQUEST</dispatcher>
 	</filter-mapping>
+	
 </web-app>

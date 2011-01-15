@@ -8,6 +8,6 @@
 <title>VRaptor Blank Project</title>
 </head>
 <body>
-	It works!! ${variable}
+	
 </body>
 </html>
