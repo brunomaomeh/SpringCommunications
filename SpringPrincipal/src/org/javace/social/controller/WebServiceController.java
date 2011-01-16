@@ -1,5 +1,8 @@
 package org.javace.social.controller;
 
+import org.javace.social.service.WebService;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
@@ -10,9 +13,12 @@ import br.com.caelum.vraptor.Result;
 public class WebServiceController {
 
 	private final Result result;
+	private final WebService webService;
 
-	public WebServiceController(Result result) {
+	@Autowired
+	public WebServiceController(Result result, WebService webService) {
 		this.result = result;
+		this.webService = webService;
 	}
 	
 	@Get
@@ -24,7 +30,7 @@ public class WebServiceController {
 	@Post
 	@Path("/webService/consome")
 	public void consome() {
-		System.out.println("consumiu");
+		webService.consome();
 		result.redirectTo(this).index();
 	}
 	
