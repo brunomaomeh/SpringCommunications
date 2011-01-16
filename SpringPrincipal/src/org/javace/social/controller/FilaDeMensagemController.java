@@ -7,24 +7,24 @@ import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 
 @Resource
-public class WebServiceController {
+public class FilaDeMensagemController {
 
 	private final Result result;
 
-	public WebServiceController(Result result) {
+	public FilaDeMensagemController(Result result) {
 		this.result = result;
 	}
 	
 	@Get
-	@Path("/webService")
+	@Path("/filaDeMensagem")
 	public void index() {
 		
 	}
 	
 	@Post
-	@Path("/webService/consome")
+	@Path("/filaDeMensagem/envia")
 	public void consome() {
-		System.out.println("consumiu");
+		System.out.println("enviou");
 		result.redirectTo(this).index();
 	}
 	
