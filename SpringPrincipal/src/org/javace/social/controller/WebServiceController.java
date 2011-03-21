@@ -30,8 +30,9 @@ public class WebServiceController {
 	@Post
 	@Path("/webService/consome")
 	public void consome() {
-		webService.consome();
-		result.redirectTo(this).index();
+		String valorConsumido = webService.consome();
+		result.include("valorConsumido", valorConsumido);
+		result.forwardTo(this).index();
 	}
 	
 }

@@ -6,6 +6,7 @@
 		<div id="container">
 			<h1>Web-Service</h1>
 			<form action="<c:url value="/webService/consome"/>" name="form" method="post">
+				valor consumido: <b>${valorConsumido}</b>
 				<div align="right">
 					<button type="submit" id="submit">Consumir</button>
 				</div>

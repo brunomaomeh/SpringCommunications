@@ -36,7 +36,7 @@
 
 	<!-- Service endpoint -->
 	<!-- See http://incubator.apache.org/cxf/faq.html regarding CXF + Spring AOP -->
-	<jaxws:endpoint id="WebServiceEndpoint" implementor="#webService"
+	<jaxws:endpoint id="WebServiceEndpoint" implementor="#produtorWS"
 		address="/v1/WebService" >
 		<jaxws:serviceFactory>
 			<ref bean="aegisService" />

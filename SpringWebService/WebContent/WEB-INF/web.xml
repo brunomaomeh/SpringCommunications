@@ -9,7 +9,6 @@
 	<!-- ******************************************************* -->
 	<!-- Configuração do Spring -->
 	<!-- ******************************************************* -->
-
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
@@ -23,9 +22,22 @@
 	</listener>
 	
 	<!-- ******************************************************* -->
+	<!-- Configuração do Vraptor -->
+	<!-- ******************************************************* -->
+	<filter>
+		<filter-name>vraptor</filter-name>
+		<filter-class>br.com.caelum.vraptor.VRaptor</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>vraptor</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>REQUEST</dispatcher>
+	</filter-mapping>
+	
+	<!-- ******************************************************* -->
 	<!-- Configuração do XCF -->
 	<!-- ******************************************************* -->
-
 	<servlet>
 		<servlet-name>CXFServlet</servlet-name>
 		<display-name>CXF Servlet</display-name>
@@ -37,4 +49,5 @@
 		<servlet-name>CXFServlet</servlet-name>
 		<url-pattern>/webservice/*</url-pattern>
 	</servlet-mapping>
+	
 </web-app>

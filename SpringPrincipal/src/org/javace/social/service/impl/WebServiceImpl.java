@@ -1,25 +1,34 @@
 package org.javace.social.service.impl;
 
-import javacesocial.webservice.v1.AutorizadorWS;
+import java.rmi.RemoteException;
+
+import javax.xml.rpc.ServiceException;
 
 import org.javace.social.service.WebService;
+import org.javace.social.webservice.service.ProdutorWS;
 import org.springframework.stereotype.Service;
 
 @Service
 public class WebServiceImpl implements WebService {
 
-	private final javacesocial.webservice.v1.WebService servico = new javacesocial.webservice.v1.WebService();
-	private final AutorizadorWS webService = servico.getAutorizadorWSImplPort();
-
-//	@Autowired
-//	public WebServiceImpl(AutorizadorWS webService) {
-//		this.webService = webService;
-//		
-//	}
+	private final javacesocial.webservice.v1.ProdutorWS servico = new javacesocial.webservice.v1.ProdutorWSLocator();
+	private ProdutorWS webService;
 	
-	public void consome() {
-		System.out.println(webService.servico("qualquer"));
-		System.out.println("CONSUMIU");
+	public WebServiceImpl() {
+		try {
+			webService = servico.getProdutorWSImplPort();
+		} catch (ServiceException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public String consome() {
+		try {
+			return webService.servico("qualquer");
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		return "";
 	}
 
 }
