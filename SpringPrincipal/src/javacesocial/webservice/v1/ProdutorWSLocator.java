@@ -39,7 +39,7 @@ public class ProdutorWSLocator extends org.apache.axis.client.Service implements
         ProdutorWSImplPortWSDDServiceName = name;
     }
 
-    public org.javace.social.webservice.service.ProdutorWS getProdutorWSImplPort() throws javax.xml.rpc.ServiceException {
+    public org.javace.social.service.webservice.ProdutorWS getProdutorWSImplPort() throws javax.xml.rpc.ServiceException {
        java.net.URL endpoint;
         try {
             endpoint = new java.net.URL(ProdutorWSImplPort_address);
@@ -50,7 +50,7 @@ public class ProdutorWSLocator extends org.apache.axis.client.Service implements
         return getProdutorWSImplPort(endpoint);
     }
 
-    public org.javace.social.webservice.service.ProdutorWS getProdutorWSImplPort(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
+    public org.javace.social.service.webservice.ProdutorWS getProdutorWSImplPort(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
         try {
             javacesocial.webservice.v1.ProdutorWSSoapBindingStub _stub = new javacesocial.webservice.v1.ProdutorWSSoapBindingStub(portAddress, this);
             _stub.setPortName(getProdutorWSImplPortWSDDServiceName());
@@ -72,7 +72,7 @@ public class ProdutorWSLocator extends org.apache.axis.client.Service implements
      */
     public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
         try {
-            if (org.javace.social.webservice.service.ProdutorWS.class.isAssignableFrom(serviceEndpointInterface)) {
+            if (org.javace.social.service.webservice.ProdutorWS.class.isAssignableFrom(serviceEndpointInterface)) {
                 javacesocial.webservice.v1.ProdutorWSSoapBindingStub _stub = new javacesocial.webservice.v1.ProdutorWSSoapBindingStub(new java.net.URL(ProdutorWSImplPort_address), this);
                 _stub.setPortName(getProdutorWSImplPortWSDDServiceName());
                 return _stub;

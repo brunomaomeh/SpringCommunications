@@ -13,6 +13,7 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 			/WEB-INF/config/spring/applicationContext.xml
+			/WEB-INF/config/spring/applicationContext-jms.xml
 <!--			/WEB-INF/config/spring/applicationContext-persistence.xml-->
 		</param-value>
 	</context-param>

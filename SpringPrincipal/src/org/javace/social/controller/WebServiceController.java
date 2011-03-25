@@ -1,6 +1,6 @@
 package org.javace.social.controller;
 
-import org.javace.social.service.WebService;
+import org.javace.social.service.app.WebService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import br.com.caelum.vraptor.Get;
