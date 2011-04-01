@@ -4,25 +4,35 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
+	<bean id="activeMQConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+		<property name="brokerURL">
+			<value>tcp://localhost:61616</value>
+		</property>
+	</bean>
+	
 	<!-- a pooling based JMS provider -->
 	<bean id="jmsFactory" class="org.apache.activemq.pool.PooledConnectionFactory"
 		destroy-method="stop">
-		<property name="connectionFactory">
-			<bean class="org.apache.activemq.ActiveMQConnectionFactory">
-				<property name="brokerURL">
-					<value>tcp://localhost:61616</value>
-				</property>
-			</bean>
-		</property>
+		<property name="connectionFactory" ref="activeMQConnectionFactory" />
 	</bean>
 
-	<!-- Spring JMS Template -->
-	<bean id="myJmsTemplate" class="org.springframework.jms.core.JmsTemplate">
-		<property name="connectionFactory">
-			<ref local="jmsFactory" />
-		</property>
+	<!-- Spring JMS Queue Template -->
+	<bean id="jmsTemplateFila" class="org.springframework.jms.core.JmsTemplate">
+		<property name="defaultDestination" ref="destinoFila"></property>
+		<property name="connectionFactory" ref="jmsFactory" />
+	</bean>
+	<bean id="destinoFila" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg value="queue02" />
 	</bean>
 
+	<!-- Spring JMS Topic Template -->
+	<bean id="jmsTemplateTopico" class="org.springframework.jms.core.JmsTemplate">
+		<property name="defaultDestination" ref="destinoTopico"></property>
+		<property name="connectionFactory" ref="jmsFactory" />
+	</bean>
+	<bean id="destinoTopico" class="org.apache.activemq.command.ActiveMQTopic">
+		<constructor-arg value="topic01" />
+	</bean>
 
 
 </beans>

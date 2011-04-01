@@ -21,15 +21,19 @@ public class FilaDeMensagemController {
 	
 	@Get
 	@Path("/filaDeMensagem")
-	public void index() {
-		
+	public void index() { }
+	
+	@Post
+	@Path("/filaDeMensagem/enviaParaAFila")
+	public void enviaParaAFila(String mensagem) {
+		jmsService.enviaParaAFila(mensagem);
+		result.redirectTo(this).index();
 	}
 	
 	@Post
-	@Path("/filaDeMensagem/envia")
-	public void enviaParaAFila(String mensagem) {
-		jmsService.enviaParaAFila(mensagem);
-		System.out.println("enviou");
+	@Path("/filaDeMensagem/enviaParaOTopico")
+	public void enviaParaOTopico(String mensagem) {
+		jmsService.enviaParaOTopico(mensagem);
 		result.redirectTo(this).index();
 	}
 	

@@ -13,6 +13,9 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link type="text/css" rel="stylesheet" href="${ctx}/css/springcommunication.css" />
 		
+		<script type="text/javascript" src="${ctx}/js/jquery/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="${ctx}/js/spring_principal.js"></script>
+
 		<title>SpringCommunication</title>
 	</head>
 	

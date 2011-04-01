@@ -8,20 +8,21 @@ import org.springframework.stereotype.Service;
 @Service
 public class JMSServiceImpl implements JMSService {
 
-	private final JmsTemplate jmsTemplate;
+	private final JmsTemplate jmsTemplateFila;
+	private final JmsTemplate jmsTemplateTopico;
 	
 	@Autowired
-	public JMSServiceImpl(JmsTemplate jmsTemplate) {
-		this.jmsTemplate = jmsTemplate;
+	public JMSServiceImpl(JmsTemplate jmsTemplateFila, JmsTemplate jmsTemplateTopico) {
+		this.jmsTemplateFila = jmsTemplateFila;
+		this.jmsTemplateTopico = jmsTemplateTopico;
 	}
 
 	public void enviaParaAFila(String message) {
-		jmsTemplate.convertAndSend("queue01", message);
+		jmsTemplateFila.convertAndSend(message);
 	}
 
 	public void enviaParaOTopico(String message) {
-		// TODO Auto-generated method stub
-		
+		jmsTemplateTopico.convertAndSend(message);
 	}
 	
 }
