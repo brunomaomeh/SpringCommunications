@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/WebSpringSecurityOSS/!svn/ver/2/trunk/WebRoot/WEB-INF/config/spring
+END
+applicationContext-security.xml
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/WebSpringSecurityOSS/!svn/ver/4/trunk/WebRoot/WEB-INF/config/spring/applicationContext-security.xml
+END
+applicationContext.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/WebSpringSecurityOSS/!svn/ver/5/trunk/WebRoot/WEB-INF/config/spring/applicationContext.xml
+END
+applicationContext-persistence.xml
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/WebSpringSecurityOSS/!svn/ver/5/trunk/WebRoot/WEB-INF/config/spring/applicationContext-persistence.xml
+END

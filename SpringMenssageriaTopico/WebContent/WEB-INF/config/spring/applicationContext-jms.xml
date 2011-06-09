@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="activeMQConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+		<property name="brokerURL">
+			<value>tcp://localhost:61616</value>
+		</property>
+	</bean>
+
+	<!-- A POJO that implements the JMS message listener -->
+<!-- 	<bean id="simpleMessageListener" class="com.mycompany.SimpleMessageListener"> -->
+<!-- 		The Spring message listener container configuration -->
+<!-- 		<jms:listener-container container-type="default" -->
+<!-- 			connection-factory="connectionFactory" acknowledge="auto"> -->
+<!-- 			<jms:listener destination="TEST.FOO" ref="simpleMessageListener" -->
+<!-- 				method="onMessage" /> -->
+<!-- 		</jms:listener-container> -->
+
+
+</beans>
